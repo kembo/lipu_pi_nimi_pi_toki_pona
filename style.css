@@ -2,7 +2,7 @@ html {
     font-size: calc(100vw / 16);
 }
 
-.table {
+#table {
     /*width: 100%;*/
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -55,7 +55,7 @@ p {
     font-size: calc(100vw / 32);
     }
 
-    .table {
+    #table {
     grid-template-columns: repeat(16, 1fr);
     }
 }
@@ -65,7 +65,7 @@ p {
     font-size: calc(100vw / 8);
     }
 
-    .table {
+    #table {
     grid-template-columns: repeat(4, 1fr);
     }
 }
@@ -81,7 +81,7 @@ p {
     font-size: calc(100vw / 32);
     }
 
-    .table {
+    #table {
     grid-template-columns: repeat(16, 1fr);
     }
 }
@@ -91,7 +91,7 @@ p {
     font-size: calc(100vh / 16);
     }
 
-    .table {
+    #table {
     grid-template-columns: repeat(16, 1fr);
     }
 }
