@@ -29,10 +29,10 @@ window.addEventListener('load', (_ev) => {
     const nijonMini = [nijon, 'mini'];
     const alphabet = 'alphabet';
 
-    function createCell(spell, japanese, miniFlag) {
+    function createCell(spell, japanese, miniFlag, puFlag) {
         miniFlag = miniFlag != '0';
         return table.appendChild(
-            createDiv(cell, [
+            createDiv([cell, puFlag == '1' ? 'pu' : 'non-pu'], [
                 createDiv(pona, spell == 'ku' ? '' : spell),
                 createDiv(miniFlag ? nijonMini : nijon, japanese),
                 createDiv(alphabet, spell)
@@ -43,7 +43,7 @@ window.addEventListener('load', (_ev) => {
     fetch('./kulupu_nimi.csv')
         .then((res) => res.text())
         .then((data) => (
-            data.split('\n')
-                .forEach((line) => createCell(...(line.split(','))))
-        ))
+            data.split('\n').slice(1)
+                .forEach((line) => line ? createCell(...(line.split(','))) : null)
+        ));
 });
